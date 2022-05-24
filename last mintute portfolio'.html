@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Jamaris Portfolio</title>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="script.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+        <!-- hide extra elements on small devices -->
+        <style>
+        @media (min-width: 100px) {
+            .logo {
+                display: none;
+            }
+        }
+        @media (min-width: 1292px){
+            .logo {
+                display: block;
+            }
+        }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- navigation bar -->
+        <nav class="navbar">
+            <div class="max-width">
+                <div class="logo">
+                    <h4>Portfolio </h4>
+                </div>
+                <ul class="menu">
+                    <a href="index.html"><li><button class="btn">Home</button></li></a>
+                    <a href="#about"><li><button class="btn">About</button></li></a>
+                    <a href="#skills"><li><button class="btn">Skills</button></li></a>
+                    <a href="#projects"><li><button class="btn">Projects</button></li></a>
+                    <a href="#services"><li><button class="btn">Services</button></li></a>
+                    <a href="#"><li><button class="btn" id="hamburger"><i class="fa fa-bars"></i></button></li></a>
+                </ul>
+                </div>
+            </div>
+        </nav>
+            <!-- home section start -->
+            <section class="home" id="home">
+                <div class="max-width">
+                    <div class="home-content">
+                        <div class="text-1">Hello, my name is</div>
+                        <div class="text-2">Jamaris Federick.</div>
+                        <div class="text-3">I am a <span class="flavor">Web Developer</span></div>
+                    </div>
+                </div>
+            </section> <br><hr>
+            
+            <!-- about section -->
+            <div class="content" id="about">
+                <h1 class="title flavor">About me<br></h1>
+                <img src="media/profilephoto.jpg" alt="Profile photo" class="left-column">
+                <p class="right-column">
+                    My name is Jamaris Federick,<br><br>I like to spend time with family, watch tv, listen to music, sleep, 
+                    <a href= class="right-column">
+                        <button class="btn persistent"><i class="fa fa-file"></i> My Resume</button>
+                    </a>
+                </p>
+            </div> <br><hr>
+
+            <!-- skills section -->
+            <div class="content" id="skills">
+                <h1 class="title flavor">My Skills</h1>
+                <h2>My skills and experience</h2>
+                <p>
+                <br>These are 4 coding programs that i'm comfortable with.
+                <br><a href="https//www.linkdin.com"><button class="btn persistent"><i class="fa fa-linkedin"></i> My LinkedIn</button></a>
+                </p>
+
+                <h3 style="text-align:center;margin-bottom:-1.5em;">What do I know best?</h3>
+                <canvas id="myChart" style="width:100%;width:40vw;max-width:100vh;"></canvas>
+                    <script>
+                    var xValues = ["HTML", "CSS", "JavaScript", "PHP"];
+                    var yValues = [35, 35, 19, 1];
+                    var barColors = [
+                    "slateblue",
+                    "forestgreen",
+                    "crimson",
+                    "indigo"
+                    ];
+
+                    new Chart("myChart", {
+                    type: "pie",
+                    data: {
+                        labels: xValues,
+                        datasets: [{
+                        backgroundColor: barColors,
+                        data: yValues
+                        }]
+                    },
+                    options: {
+                        title: {
+                        display: true,
+                        }
+                    }
+                    });
+                    </script>
+
+                     
+            </div><br><hr>
+
+            <!-- projects section -->
+            <div class="content project-display" id="projects">
+                <h1 class="title flavor">My Latest Projects</h1>
+                <a href="minesweeper.html"><button class="large-btn" id="project1"><label>Minesweeper<br><span>(JavaScript)</span></label><br><img src="media/project_minesweeper.png" alt="Minesweeper icon"></button></a>
+                <a><button class="large-btn" id="project2"><label>TikTok Clone<br><span>(React, Database)</span></label><br><img src="media/project_tiktok.png" alt="TikTok icon"></button></a>
+                <a><button class="large-btn" id="project3"><label>Breakout<br><span>(JavaScript)</span></label><br><img src="media/project_breakout.png" alt="Breakout icon"></button></a>
+                <a><button class="large-btn" id="project4"><label>Unknown<br><span>?</span></label><br><img src="media/project_unspecified.jpg" alt="Question mark icon"></button></a>
+            </div><br><hr>
+
+            <!-- services section -->
+        <div class="content services-display" id="services">
+            <h1 class="title flavor">What I can do</h1>
+
+            <a><button class="large-btn"><label><span><i class="fa fa-code"></i></span><br>Web Development</label><br><br>
+                <p id="services1">
+                I can use the knowledge that I know to create a website 
+            </p></button></a>
+
+            <a><button class="large-btn"><label><span><i class="fa fa-desktop"></i></span><br>Graphic Design</label><br><br>
+                <p id="services2">
+                    I can use my Graphic Design skills to make websites look unique and different
+            </p></button></a>
+
+            <a><button class="large-btn"><label><span><i class="fa fa-server"></i></span><br>Database Management</label><br><br>
+                <p id="services3">
+                I can use the knowledge that I know to manage a website's database and make sure everything is working 
+            </p></button></a>
+        </div>
+
+            <!-- dark mode switch -->
+            <label class="darkmode-switch footer-float">
+                <input type="checkbox" onclick="toggleDark()">
+                <span class="slider round"></span>
+            </label>
+            <!-- contact button -->
+            <a href="contact.html" class="contact email footer-float">
+                <button class="btn"><i class="fa fa-envelope"></i> Contact me</button>
+            </a>
+
+            
